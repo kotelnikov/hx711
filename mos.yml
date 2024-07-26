@@ -1,0 +1,28 @@
+author: Aleksey Kotelnikov <kotelnikov.www@gmail.com>
+description: HX711 amplifier native driver for Mongoose OS
+type: lib
+version: 1.0
+
+includes:
+  - include
+
+sources:
+  - src
+
+libs:
+
+config_schema:
+  - ["hx711", "o", {title: "HX711 configuration"}]
+  - ["hx711.enable", "b", true, {title: "Enable HX711 driver"}]
+  - ["hx711.gain", "i", 0, {title: "HX711 amplification factor and chanel: 0 - A_128, 1 - B_32, 2 - A_64"}]
+  - ["hx711.clock_gpio", "i", -1, {title: "HX711 PD_SCK gpio"}]
+  - ["hx711.data_gpio", "i", -1, {title: "HX711 DOUT gpio"}]
+  - ["hx711.poll_period", "i", 10000, {title: "Automatic reading period in milliseconds, 0 - disable"}]
+  - ["hx711.poll_rate", "i", 1, {title: "Number of samples per one reading, 1 - single sample mode"}]
+  - ["hx711.delay_us", "i", 30, {title: "HX711 delay in µs, typically 20-30 µs is good enough"}]
+
+tags:
+  - hx711
+  - mongoose_os
+
+manifest_version: 2020-01-29
